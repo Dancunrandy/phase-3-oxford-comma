@@ -1,3 +1,14 @@
+
+def oxford_comma(array)
+  if array.length <= 1
+    return array.join
+  elsif array.length == 2
+    return array.join(" and ")
+  else
+    last_element = array.pop
+    return array.join(", ") + ", and " + last_element
+  end
+end
 describe "#oxford_comma" do
   it 'returns a string without any additional formatting when given a 1-element array' do
     expect(oxford_comma(["kiwi"])).to eq("kiwi")
